@@ -1,0 +1,52 @@
+int main()
+	{
+		int num;
+		cout << "Enter ";
+		cin >> num;
+		vector <vector<int>> arr;
+		arr.resize(num);
+		for (int i = 0; i < num; i++)
+		{
+			int index;
+			cout << "Enter the element number of the array: ";
+			cin >> index;
+			arr[i].resize(index);
+			for (int j = 0; j < index; j++)
+			{
+				cin >> arr[i][j];
+			}
+		}
+		for (int i = 0; i < num; i++)
+		{
+			for (int j = 0; j < arr[i].size(); j++)
+			{
+				cout << arr[i][j] << " ";
+			}
+			cout << endl;
+		}
+		int _num, _idx;
+
+		int Ri;
+		do {
+		cout << "Enter the reference array number: ";
+		cin >> Ri;
+		} while (Ri > num);
+
+		for (int i = 0; i < Ri; i++)
+		{
+			do {
+				cout << "Enter subarray: ";
+				cin >> _num;
+			} while (_num > num);
+
+			do {
+				cout << "Enter the element of the subarray: ";
+				cin >> _idx;
+			} while (_idx > arr[_num].size());
+
+			cout << "Result: " << arr[_num][_idx] << endl;
+		}
+
+
+		return 0;
+	}
